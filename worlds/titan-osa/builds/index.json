@@ -1,0 +1,254 @@
+{
+  "version": 1,
+  "atoms": [
+    {
+      "id": "character.elara_myung",
+      "type": "character",
+      "name": "Elara Myung",
+      "summary": "A senior Aegis technician whose steadiness is famous on Argonaut Station, and whose private fear is that the system is drifting in ways the dashboards refuse to name.",
+      "tags": [
+        "argonaut",
+        "aegis",
+        "technician",
+        "maintenance",
+        "systems",
+        "mid-level",
+        "competent"
+      ],
+      "path": "atoms/character/elara_myung.json"
+    },
+    {
+      "id": "character.sloane_kestrel",
+      "type": "character",
+      "name": "Sloane Kestrel",
+      "summary": "The OSA Compliance Liaison assigned to Argonaut Station: polite, immaculate, and terrifyingly calm, as if the station is a spreadsheet that occasionally develops feelings.",
+      "tags": [
+        "argonaut",
+        "osa",
+        "compliance",
+        "administrator",
+        "politics",
+        "oversight",
+        "antagonistic-ally"
+      ],
+      "path": "atoms/character/sloane_kestrel.json"
+    },
+    {
+      "id": "character.tamsin_velle",
+      "type": "character",
+      "name": "Tamsin Velle",
+      "summary": "A hydroponics shift lead and unofficial station listener who trades in small comforts and small truths, collecting what people won’t write down because it sounds like fear.",
+      "tags": [
+        "argonaut",
+        "hydroponics",
+        "civilian",
+        "community",
+        "rumors",
+        "morale",
+        "practical"
+      ],
+      "path": "atoms/character/tamsin_velle.json"
+    },
+    {
+      "id": "culture.lantern_walk",
+      "type": "culture",
+      "name": "The Lantern Walk",
+      "summary": "A station-wide festival that looks like a gentle procession but functions as a ceremonial audit: lights in the corridors, checklists in the hands, and a shared agreement not to call it fear.",
+      "tags": [
+        "argonaut",
+        "titan",
+        "ritual",
+        "maintenance",
+        "festival",
+        "audit",
+        "procedural-dread"
+      ],
+      "path": "atoms/culture/lantern_walk.json"
+    },
+    {
+      "id": "org.outer_system_authority",
+      "type": "org",
+      "name": "Outer System Authority (OSA)",
+      "summary": "A distant governance-and-logistics machine that treats colonies as managed systems: quotas, compliance, and calm. Authority is distributed through committees, dashboards, and the quiet power of supply.",
+      "tags": [
+        "osa",
+        "authority",
+        "bureaucracy",
+        "outer-system",
+        "argonaut",
+        "titan"
+      ],
+      "path": "atoms/org/outer_system_authority.json"
+    },
+    {
+      "id": "place.argonaut_station",
+      "type": "place",
+      "name": "Argonaut Station",
+      "summary": "An Outer System Authority colony on Titan where survival is scheduled: eighteen thousand people live under methane skies inside policy, pressure, and the steady breathing of the Aegis Life-Support Stack.",
+      "tags": [
+        "titan",
+        "colony",
+        "osa",
+        "hard-sf",
+        "claustrophobic",
+        "procedural-dread"
+      ],
+      "path": "atoms/place/argonaut_station.json"
+    },
+    {
+      "id": "tech.aegis_lifesupport_stack",
+      "type": "tech",
+      "name": "Aegis Life-Support Stack",
+      "summary": "A layered life-support ecosystem of scrubbers, bioreactors, and sealed hydroponics whose tolerances are so tight that maintenance has become a civic ritual.",
+      "tags": [
+        "titan",
+        "argonaut",
+        "life-support",
+        "aegis",
+        "critical-system",
+        "hard-sf"
+      ],
+      "path": "atoms/tech/aegis_lifesupport_stack.json"
+    }
+  ],
+  "type_map": {
+    "character": [
+      "character.elara_myung",
+      "character.sloane_kestrel",
+      "character.tamsin_velle"
+    ],
+    "culture": [
+      "culture.lantern_walk"
+    ],
+    "org": [
+      "org.outer_system_authority"
+    ],
+    "place": [
+      "place.argonaut_station"
+    ],
+    "tech": [
+      "tech.aegis_lifesupport_stack"
+    ]
+  },
+  "tag_map": {
+    "argonaut": [
+      "character.elara_myung",
+      "character.sloane_kestrel",
+      "character.tamsin_velle",
+      "culture.lantern_walk",
+      "org.outer_system_authority",
+      "tech.aegis_lifesupport_stack"
+    ],
+    "aegis": [
+      "character.elara_myung",
+      "tech.aegis_lifesupport_stack"
+    ],
+    "technician": [
+      "character.elara_myung"
+    ],
+    "maintenance": [
+      "character.elara_myung",
+      "culture.lantern_walk"
+    ],
+    "systems": [
+      "character.elara_myung"
+    ],
+    "mid-level": [
+      "character.elara_myung"
+    ],
+    "competent": [
+      "character.elara_myung"
+    ],
+    "osa": [
+      "character.sloane_kestrel",
+      "org.outer_system_authority",
+      "place.argonaut_station"
+    ],
+    "compliance": [
+      "character.sloane_kestrel"
+    ],
+    "administrator": [
+      "character.sloane_kestrel"
+    ],
+    "politics": [
+      "character.sloane_kestrel"
+    ],
+    "oversight": [
+      "character.sloane_kestrel"
+    ],
+    "antagonistic-ally": [
+      "character.sloane_kestrel"
+    ],
+    "hydroponics": [
+      "character.tamsin_velle"
+    ],
+    "civilian": [
+      "character.tamsin_velle"
+    ],
+    "community": [
+      "character.tamsin_velle"
+    ],
+    "rumors": [
+      "character.tamsin_velle"
+    ],
+    "morale": [
+      "character.tamsin_velle"
+    ],
+    "practical": [
+      "character.tamsin_velle"
+    ],
+    "titan": [
+      "culture.lantern_walk",
+      "org.outer_system_authority",
+      "place.argonaut_station",
+      "tech.aegis_lifesupport_stack"
+    ],
+    "ritual": [
+      "culture.lantern_walk"
+    ],
+    "festival": [
+      "culture.lantern_walk"
+    ],
+    "audit": [
+      "culture.lantern_walk"
+    ],
+    "procedural-dread": [
+      "culture.lantern_walk",
+      "place.argonaut_station"
+    ],
+    "authority": [
+      "org.outer_system_authority"
+    ],
+    "bureaucracy": [
+      "org.outer_system_authority"
+    ],
+    "outer-system": [
+      "org.outer_system_authority"
+    ],
+    "colony": [
+      "place.argonaut_station"
+    ],
+    "hard-sf": [
+      "place.argonaut_station",
+      "tech.aegis_lifesupport_stack"
+    ],
+    "claustrophobic": [
+      "place.argonaut_station"
+    ],
+    "life-support": [
+      "tech.aegis_lifesupport_stack"
+    ],
+    "critical-system": [
+      "tech.aegis_lifesupport_stack"
+    ]
+  },
+  "id_to_path": {
+    "character.elara_myung": "atoms/character/elara_myung.json",
+    "character.sloane_kestrel": "atoms/character/sloane_kestrel.json",
+    "character.tamsin_velle": "atoms/character/tamsin_velle.json",
+    "culture.lantern_walk": "atoms/culture/lantern_walk.json",
+    "org.outer_system_authority": "atoms/org/outer_system_authority.json",
+    "place.argonaut_station": "atoms/place/argonaut_station.json",
+    "tech.aegis_lifesupport_stack": "atoms/tech/aegis_lifesupport_stack.json"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "worldcodex.world_bible.v1",
+  "world": {
+    "id": "argonaut_station",
+    "name": "Argonaut Station",
+    "logline": "A cramped Titan colony where bureaucracy and life-support rituals keep people alive and quietly afraid.",
+    "genre_tags": ["hard_sf", "bureaucratic_dread"],
+    "timeframe": "late-22nd-century",
+    "technology_level": "advanced-industrial",
+    "tone": {
+      "keywords": ["procedural", "contained", "industrial", "quiet-dread"],
+      "do": ["orderly composition", "subtle tension"],
+      "avoid": ["utopian gloss", "cartoon tech"]
+    }
+  },
+  "visual_identity": {
+    "palette": [
+      {"name": "amber_maintenance", "keywords": ["amber maintenance lighting", "warm sodium glow", "warning-amber accents"]}
+    ],
+    "materials": ["brushed aluminum", "composite panels", "insulated conduits", "frosted seals"],
+    "lighting": ["amber strips", "instrument glow", "low ceiling fixtures"],
+    "motifs": [
+      {"id": "procedural_signage", "text": "procedural signage, checklist placards, compliance labels, stamped tags"},
+      {"id": "frost_and_condensation", "text": "frosted seams, breath condensation, chilled airlocks"},
+      {"id": "tight_corridors", "text": "cramped corridors, cable trays, low ceilings, utilitarian geometry"}
+    ],
+    "constraints": {
+      "always_true": ["technology is functional and worn, not glossy", "interiors feel sealed and engineered"],
+      "never_show": ["blue sky", "lush plants", "readable text", "logos"]
+    }
+  },
+  "prompt_blocks": {
+    "global_positive": ["industrial sci-fi realism", "high-detail environmental storytelling", "subtle grime and wear"],
+    "global_negative": ["watermark", "logo", "readable text"],
+    "camera_defaults": ["35mm documentary framing", "slight wide-angle in tight spaces"]
+  },
+  "places": [
+    {
+      "id": "lantern_walk_corridor",
+      "name": "Lantern Walk Corridor",
+      "type": "interior_passage",
+      "keywords": ["festival lanterns", "amber glow", "crowded corridor"],
+      "prompt_positive": ["mixed handmade and utilitarian LED lanterns", "layered outerwear and station uniforms", "condensation haze in warm light"],
+      "prompt_negative": ["open-air festival", "fireworks"],
+      "set_dressing": ["cable trays", "air scrubber vents", "maintenance panels"]
+    }
+  ],
+  "factions": [],
+  "characters": [],
+  "props": [],
+  "style_profiles": [
+    {
+      "id": "argonaut_industrial_amber",
+      "name": "Argonaut Industrial Amber",
+      "prompt_positive": ["industrial sci-fi interior", "amber maintenance lighting", "tactile materials, subtle grime", "condensation and frost cues"],
+      "prompt_negative": ["readable text", "watermark", "logo"]
+    }
+  ]
+}

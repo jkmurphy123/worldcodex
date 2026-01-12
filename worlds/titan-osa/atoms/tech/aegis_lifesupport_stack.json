@@ -1,0 +1,103 @@
+{
+  "id": "tech.aegis_lifesupport_stack",
+  "type": "tech",
+  "name": "Aegis Life-Support Stack",
+  "summary": "A layered life-support ecosystem of scrubbers, bioreactors, and sealed hydroponics whose tolerances are so tight that maintenance has become a civic ritual.",
+  "tags": ["titan", "argonaut", "life-support", "aegis", "critical-system", "hard-sf"],
+  "refs": {
+    "canonical": true,
+    "related": ["place.argonaut_station"]
+  },
+  "data": {
+    "role": "Primary atmospheric recycling, water reclamation, and food-loop stabilization for Argonaut Station.",
+    "components": [
+      {
+        "name": "Atmospheric Scrubber Towers",
+        "function": "CO₂ capture and trace contaminant removal.",
+        "notes": "Designed for redundancy, but sensitive to material compatibility and microfouling."
+      },
+      {
+        "name": "Bioreactor Loop",
+        "function": "Biological processing of waste streams into usable feedstocks.",
+        "notes": "Stable when balanced; becomes politically sensitive when inputs are rationed."
+      },
+      {
+        "name": "Water Reclamation Spine",
+        "function": "Multi-stage purification and mineral balancing.",
+        "notes": "Failure is gradual and hard to detect without full-spectrum sampling."
+      },
+      {
+        "name": "Sealed Hydroponics Vaults",
+        "function": "Food production and oxygen contribution.",
+        "notes": "Crop schedules are treated like public calendars; disruptions cause social anxiety."
+      },
+      {
+        "name": "Thermal Management Lattice",
+        "function": "Heat exchange and condensation control against Titan’s cryogenic exterior.",
+        "notes": "Creates ‘cold memory’ surfaces: frost patterns that maintenance crews learn to read."
+      }
+    ],
+    "operational_doctrine": {
+      "principles": [
+        "Preventive maintenance is cheaper than heroics.",
+        "No single sensor is trusted without corroboration.",
+        "When the model disagrees with the room, the model wins unless escalation criteria are met."
+      ],
+      "maintenance_culture": "Technicians are treated with careful respect; maintenance language leaks into everyday speech."
+    },
+    "failure_modes": [
+      {
+        "name": "Silent Drift",
+        "symptoms": [
+          "minor air-quality variance within policy tolerances",
+          "subtle odor changes reported anecdotally",
+          "increased scrubber cycle frequency"
+        ],
+        "cause_candidates": [
+          "microfouling in scrubber matrices",
+          "sensor calibration creep",
+          "trace polymer outgassing"
+        ],
+        "why_it_is_scary": "It looks like normal variance until it isn’t. The first official response is often administrative, not physical."
+      },
+      {
+        "name": "Compatibility Cascade",
+        "symptoms": [
+          "unexpected corrosion or swelling in seals",
+          "filter life shortened across multiple bays",
+          "maintenance reassignment and ‘temporary’ procedure updates"
+        ],
+        "cause_candidates": [
+          "materials incompatibility with Titan-specific contaminants",
+          "untested substitute parts",
+          "ignored legacy memo constraints"
+        ],
+        "why_it_is_scary": "A small substitution spreads across the supply chain, and the system begins failing ‘correctly’ according to the wrong assumptions."
+      },
+      {
+        "name": "Quota Breathing",
+        "symptoms": [
+          "rationing framed as optimization",
+          "bioreactor feed adjustments",
+          "public dashboards remain ‘green’ while comfort declines"
+        ],
+        "cause_candidates": [
+          "budget-driven operating envelope shrink",
+          "committee-directed throughput targets",
+          "political pressure to avoid ‘incident classification’"
+        ],
+        "why_it_is_scary": "The colony can survive in the narrowed envelope, but people feel it first. Morale becomes a leading indicator."
+      }
+    ],
+    "signals_and_omens": [
+      "Soft alarms that rarely escalate, accompanied by a quiet spike in procedural updates.",
+      "A rise in ‘temporary’ waivers, each justified, collectively corrosive.",
+      "Frost patterns or condensation behavior changing in ways only veteran techs notice."
+    ],
+    "prompt_knobs": {
+      "tech_tone": ["industrial", "near-future", "hard-sf"],
+      "fear_tone": ["procedural dread", "slow-burn accumulation", "administrative horror"],
+      "avoid": ["magical explanations", "instant catastrophic explosions without warning buildup"]
+    }
+  }
+}

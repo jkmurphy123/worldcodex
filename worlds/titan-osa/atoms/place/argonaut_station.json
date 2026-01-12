@@ -1,0 +1,99 @@
+{
+  "id": "place.argonaut_station",
+  "type": "place",
+  "name": "Argonaut Station",
+  "summary": "An Outer System Authority colony on Titan where survival is scheduled: eighteen thousand people live under methane skies inside policy, pressure, and the steady breathing of the Aegis Life-Support Stack.",
+  "tags": ["titan", "colony", "osa", "hard-sf", "claustrophobic", "procedural-dread"],
+  "refs": {
+    "canonical": true,
+    "docs": ["docs/world_bible.md"]
+  },
+  "data": {
+    "elevator_pitch": "Titan colony run by the Outer System Authority. Life-support is treated like theology. Failure arrives as memos and revised guidelines, not sirens.",
+    "logline": "A sealed industrial civilization where dread is procedural and catastrophe accumulates inside 'acceptable margins.'",
+    "background": {
+      "stage": [
+        "Argonaut Station hangs beneath Titan’s dim orange sky like a sealed thought that refuses to be spoken aloud. Outside, methane clouds drift in slow spirals. Inside, eighteen thousand people live inside pressure, policy, and the soft mechanical breathing of the Aegis Life-Support Stack.",
+        "Built by the Outer System Authority as a demonstration colony, Argonaut is neither frontier outpost nor utopian arcology. It is an industrial organism: corridors curve for efficiency, lighting favors inspection over comfort, and every surface carries a faint memory of frost, condensation, or abrasion.",
+        "Life is orderly in ways that feel comforting until they don’t. Shift changes happen on time. Air quality reports are posted. Nutrient allocations adjust with mathematical precision. When something goes wrong, the first sign is often administrative: a revised guideline, a reclassified risk, a memo that arrives already stamped “resolved.”",
+        "The Aegis Life-Support Stack is the colony’s heart. Most residents cannot explain how it works, only that it does. Maintenance technicians carry careful respect. Preventive rituals have grown around routine inspections, culminating in the Lantern Walk: a ceremonial audit disguised as a festival.",
+        "Argonaut is prosperous, functional, and quietly afraid. Everyone knows the system is fragile. Everyone knows it has never failed. These facts coexist without resolution."
+      ],
+      "founding_date": "2191-03-14",
+      "population_estimate": 18400,
+      "location": {
+        "body": "Titan",
+        "sky": "dim orange",
+        "outside_environment": ["methane clouds", "cryogenic cold", "low visibility"],
+        "inside_environment": ["sealed pressure habitat", "recycled air", "industrial corridors"]
+      }
+    },
+    "truths": [
+      "Life-support is the highest authority, even when policy pretends otherwise.",
+      "Failure is expected, but never discussed as imminent.",
+      "Contracts define reality until human necessity forces exceptions.",
+      "Maintenance work carries cultural weight far beyond its technical role.",
+      "Transparency exists, but it is filtered through procedure."
+    ],
+    "daily_life": {
+      "sound": ["ventilation currents", "distant pumps", "soft alarms that rarely escalate"],
+      "light": ["diffuse amber", "inspection-friendly", "low-glare on frost-resistant surfaces"],
+      "smell": ["recycled air", "faint metallic undertone", "antiseptic notes"],
+      "food": ["nutritionally complete", "texturally engineered", "culturally improvised"],
+      "movement": ["deliberate", "efficient", "few wasted steps"],
+      "spaces": {
+        "personal": "compact but carefully personalized",
+        "communal": "shared corridors that feel public but not social",
+        "privacy": "exists within allocated tolerances"
+      }
+    },
+    "governance": {
+      "authority": "Outer System Authority (OSA)",
+      "structure": [
+        "Local administrators manage daily operations.",
+        "Major decisions route through distant committees and oversight layers."
+      ],
+      "dynamic": [
+        "Authority feels everywhere and nowhere at once.",
+        "Rules are rarely enforced harshly; they are refined, updated, and quietly made unavoidable."
+      ]
+    },
+    "culture": {
+      "pressure_points": [
+        "The Lantern Walk serves as both morale booster and unspoken inspection.",
+        "Technical language seeps into everyday speech.",
+        "Children learn safety procedures before they learn history.",
+        "Questioning system design is considered impolite, not rebellious."
+      ]
+    },
+    "contradictions": [
+      "Safety versus throughput.",
+      "Human intuition versus statistical certainty.",
+      "Transparency versus institutional calm.",
+      "Ritual as comfort versus ritual as blind spot.",
+      "A system designed never to fail versus people who inevitably will."
+    ],
+    "tone": {
+      "keywords": ["procedural dread", "utilitarian beauty", "corporate liturgy", "ice-cold wonder"],
+      "promise": "Catastrophe does not arrive loudly; it accumulates. Heroism looks like prevention, paperwork, and decisions made under 'acceptable margins.'",
+      "avoid": ["space opera royalty vibes", "swashbuckling frontier tone", "comic incompetence"]
+    },
+    "prompt_hooks": [
+      "A maintenance culture that behaves like ritual and doubles as social control.",
+      "Soft alarms and administrative signals that precede physical failure.",
+      "A festival (Lantern Walk) that is secretly a full-station compliance audit.",
+      "The phrase “within acceptable margins” as a recurring, ominous refrain."
+    ],
+    "constraints": {
+      "tech_level": "near-future industrial (hard-sf leaning)",
+      "magic": "none (unless explicitly added elsewhere)",
+      "themes": ["systems fragility", "institutional denial", "human warmth under procedure"]
+    },
+    "relationships": [
+      { "predicate": "governed_by", "object": "org.outer_system_authority" },
+      { "predicate": "depends_on", "object": "tech.aegis_lifesupport_stack" },
+      { "predicate": "celebrates", "object": "culture.lantern_walk" },
+      { "predicate": "haunted_by", "object": "doc.materials_compat_note_17b" }
+    ]
+  }
+}

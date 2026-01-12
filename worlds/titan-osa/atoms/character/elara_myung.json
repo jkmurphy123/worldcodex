@@ -1,0 +1,77 @@
+{
+  "id": "character.elara_myung",
+  "type": "character",
+  "name": "Elara Myung",
+  "summary": "A senior Aegis technician whose steadiness is famous on Argonaut Station, and whose private fear is that the system is drifting in ways the dashboards refuse to name.",
+  "tags": ["argonaut", "aegis", "technician", "maintenance", "systems", "mid-level", "competent"],
+  "refs": {
+    "canonical": true,
+    "related": [
+      "place.argonaut_station",
+      "tech.aegis_lifesupport_stack",
+      "culture.lantern_walk",
+      "doc.materials_compat_note_17b"
+    ]
+  },
+  "data": {
+    "role_in_world": {
+      "occupation": "Senior Life-Support Technician",
+      "division": "Aegis Maintenance Division",
+      "scope": "Scrubber towers and seal integrity checks across multiple bays",
+      "status": "respected but not protected"
+    },
+    "personality": {
+      "traits": ["methodical", "dry-humored", "quietly stubborn", "observant"],
+      "virtues": ["competence", "care for crews", "practical honesty"],
+      "flaws": ["reluctant to escalate", "too patient with procedure", "takes burden personally"]
+    },
+    "worldview": {
+      "beliefs": [
+        "Most disasters begin as paperwork.",
+        "No single sensor is trustworthy without corroboration.",
+        "People survive systems by caring for each other between the checklists."
+      ],
+      "blind_spots": [
+        "Institutional calm can be a weapon.",
+        "Her own fear of being labeled alarmist."
+      ]
+    },
+    "voice": {
+      "speech_style": "precise, understated, avoids metaphor; sometimes edits her own wording mid-sentence",
+      "tells": [
+        "corrects terminology gently but insistently",
+        "pauses before answering questions about margins",
+        "uses small, competent jokes to keep others steady"
+      ],
+      "sample_lines": [
+        "If the graph looks too clean, it’s usually because someone decided what ‘real’ means.",
+        "I’m not saying it’s failing. I’m saying it’s… behaving."
+      ]
+    },
+    "relationships": [
+      { "predicate": "works_on", "object": "tech.aegis_lifesupport_stack" },
+      { "predicate": "lives_in", "object": "place.argonaut_station" },
+      { "predicate": "participates_in", "object": "culture.lantern_walk" },
+      { "predicate": "governed_by", "object": "org.outer_system_authority" }
+    ],
+    "pressures": [
+      "Procurement-approved 'equivalent' seals appearing in crates without clear provenance.",
+      "A slow rise in waivers and temporary procedure updates that never expire.",
+      "A junior tech who keeps asking the wrong questions in the wrong rooms."
+    ],
+    "secrets_and_fears": {
+      "fear": "She has seen this drift before, years ago, and the official record says it never happened.",
+      "secret": "She keeps a private notebook of condensation behavior and frost patterns, because the station's logs sanitize 'anomalies.'"
+    },
+    "story_hooks": [
+      "She finds a reference to '17-B' embedded in an obsolete checklist margin note.",
+      "During the Lantern Walk, her lantern flickers near a service junction that has never flickered before.",
+      "She is asked to sign off on a substitution that is 'within acceptable margins' and feels wrong in her hands."
+    ],
+    "prompt_knobs": {
+      "dialogue_tone": ["restrained", "professional", "quietly uneasy"],
+      "arc_bias": ["slow realization", "reluctant escalation", "protect the crew first"],
+      "avoid": ["reckless action-hero behavior", "instant certainty without evidence"]
+    }
+  }
+}

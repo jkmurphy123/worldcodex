@@ -1,0 +1,77 @@
+{
+  "id": "character.tamsin_velle",
+  "type": "character",
+  "name": "Tamsin Velle",
+  "summary": "A hydroponics shift lead and unofficial station listener who trades in small comforts and small truths, collecting what people won’t write down because it sounds like fear.",
+  "tags": ["argonaut", "hydroponics", "civilian", "community", "rumors", "morale", "practical"],
+  "refs": {
+    "canonical": true,
+    "related": [
+      "place.argonaut_station",
+      "tech.aegis_lifesupport_stack",
+      "culture.lantern_walk",
+      "org.outer_system_authority"
+    ]
+  },
+  "data": {
+    "role_in_world": {
+      "occupation": "Hydroponics Shift Lead",
+      "affiliation": "Station Services (Food Loop)",
+      "scope": "Crop schedules, vault maintenance coordination, informal conflict mediation",
+      "status": "trusted locally, ignored officially"
+    },
+    "personality": {
+      "traits": ["warm", "pragmatic", "sharp-eyed", "patient"],
+      "virtues": ["social intelligence", "resilience", "resourcefulness"],
+      "flaws": ["keeps too many secrets", "avoids formal channels", "can become protective to a fault"]
+    },
+    "worldview": {
+      "beliefs": [
+        "People will endure anything if they feel seen.",
+        "Systems fail where humans stop talking to each other.",
+        "The station’s public calm is paid for with private worry."
+      ],
+      "blind_spots": [
+        "Sometimes procedure exists for a reason.",
+        "Information can become a weapon even when shared kindly."
+      ]
+    },
+    "voice": {
+      "speech_style": "plainspoken, tactile, uses plant and food metaphors despite herself",
+      "tells": [
+        "asks 'how are you sleeping?' as a diagnostic",
+        "offers something small before asking something hard",
+        "keeps her tone gentle while her questions cut clean"
+      ],
+      "sample_lines": [
+        "You can tell a lot from what people stop seasoning.",
+        "If the air tastes different, don’t let anyone tell you it’s imagination."
+      ]
+    },
+    "relationships": [
+      { "predicate": "works_near", "object": "tech.aegis_lifesupport_stack" },
+      { "predicate": "lives_in", "object": "place.argonaut_station" },
+      { "predicate": "participates_in", "object": "culture.lantern_walk" },
+      { "predicate": "subject_to", "object": "org.outer_system_authority" }
+    ],
+    "pressures": [
+      "Crop schedules are tightening 'for efficiency' and nobody will say why.",
+      "A technician quietly warns her about seals, and she doesn’t know what to do with the warning.",
+      "Community morale is slipping in small ways: jokes thinning, silences lengthening."
+    ],
+    "secrets_and_fears": {
+      "fear": "A slow failure will be normalized until it becomes irreversible.",
+      "secret": "Tamsin keeps an off-record ledger of 'air taste' and 'sleep quality' reports from residents, because the dashboards don’t track those."
+    },
+    "story_hooks": [
+      "Tamsin hears the phrase '17-B' from two unrelated people in the same day.",
+      "During the Lantern Walk, a child asks why the end-silence is longer this year.",
+      "A hydroponics vault shows subtle stress that looks like nutrient drift, but feels like something else."
+    ],
+    "prompt_knobs": {
+      "dialogue_tone": ["warm", "grounded", "quietly alarmed"],
+      "arc_bias": ["community resilience", "information as care", "pressure cooker empathy"],
+      "avoid": ["naive cheerfulness", "total cynicism"]
+    }
+  }
+}

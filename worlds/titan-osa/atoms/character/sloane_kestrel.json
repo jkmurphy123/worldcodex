@@ -1,0 +1,78 @@
+{
+  "id": "character.sloane_kestrel",
+  "type": "character",
+  "name": "Sloane Kestrel",
+  "summary": "The OSA Compliance Liaison assigned to Argonaut Station: polite, immaculate, and terrifyingly calm, as if the station is a spreadsheet that occasionally develops feelings.",
+  "tags": ["argonaut", "osa", "compliance", "administrator", "politics", "oversight", "antagonistic-ally"],
+  "refs": {
+    "canonical": true,
+    "related": [
+      "place.argonaut_station",
+      "org.outer_system_authority",
+      "tech.aegis_lifesupport_stack",
+      "culture.lantern_walk",
+      "doc.materials_compat_note_17b"
+    ]
+  },
+  "data": {
+    "role_in_world": {
+      "occupation": "Compliance Liaison",
+      "affiliation": "Outer System Authority (OSA)",
+      "scope": "Policy alignment, incident classification, waiver approvals, narrative control",
+      "status": "untouchable while useful"
+    },
+    "personality": {
+      "traits": ["courteous", "controlled", "analytical", "unflappable"],
+      "virtues": ["clarity", "patience", "strategic empathy"],
+      "flaws": ["instrumental morality", "avoids uncertainty", "treats people as variables under stress"]
+    },
+    "worldview": {
+      "beliefs": [
+        "Panic is more dangerous than failure.",
+        "A stable story prevents unstable behavior.",
+        "If the numbers are green, the system is green enough."
+      ],
+      "blind_spots": [
+        "Human morale is not a rounding error.",
+        "Local expertise can be more accurate than centralized models."
+      ]
+    },
+    "voice": {
+      "speech_style": "measured, formal warmth; uses policy language like soft padding around hard decisions",
+      "tells": [
+        "asks questions that are already answers",
+        "reframes fear as 'confidence management'",
+        "uses 'acceptable' and 'compliant' as if they were virtues"
+      ],
+      "sample_lines": [
+        "We don’t eliminate risk. We manage it. Loudly managing it is still managing it poorly.",
+        "Let’s keep this in the green, yes? For everyone’s sake."
+      ]
+    },
+    "relationships": [
+      { "predicate": "represents", "object": "org.outer_system_authority" },
+      { "predicate": "assigned_to", "object": "place.argonaut_station" },
+      { "predicate": "oversees", "object": "tech.aegis_lifesupport_stack" },
+      { "predicate": "attends", "object": "culture.lantern_walk" }
+    ],
+    "pressures": [
+      "Committees want throughput improvements without triggering incident classifications.",
+      "Procurement wants flexibility; engineering wants certainty; Sloane must make both feel heard.",
+      "A rumor about a buried memo is spreading among technicians like a superstition."
+    ],
+    "secrets_and_fears": {
+      "fear": "A classified incident on a different station taught Sloane that public truth can become a lethal hazard.",
+      "secret": "Sloane has access to the memo archive metadata and suspects '17-B' resurfaced via a waiver chain, but cannot admit it without implicating OSA."
+    },
+    "story_hooks": [
+      "Sloane offers Elara a quiet promotion in exchange for silence and compliance.",
+      "During a Lantern Walk, Sloane modifies the call-and-response statistics to preserve calm, accidentally revealing the manipulation.",
+      "A parts shipment arrives 'fully compliant' and Sloane knows the compliance definition was widened last quarter."
+    ],
+    "prompt_knobs": {
+      "dialogue_tone": ["calm", "professional", "softly coercive"],
+      "arc_bias": ["control the narrative", "avoid classification escalation", "protect institutional calm"],
+      "avoid": ["cartoon villain monologues", "irrational cruelty without rationale"]
+    }
+  }
+}

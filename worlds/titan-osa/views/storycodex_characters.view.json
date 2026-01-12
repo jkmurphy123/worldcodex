@@ -1,0 +1,32 @@
+{
+  "id": "view.storycodex_characters",
+  "query": {
+    "include": [
+      { "type": "character" }
+    ]
+  },
+  "assemble": {
+    "format": "object",
+    "object": {
+      "characters": {
+        "from_query": { "type": "character" },
+        "map": {
+          "fields": [
+            { "out": "id", "path": "id" },
+            { "out": "name", "path": "name" },
+            { "out": "summary", "path": "summary" },
+            {
+              "out": "voice",
+              "fields": [
+                { "out": "tics", "path": "data.voice.tells", "default": [] },
+                { "out": "lexicon", "path": "data.voice.lexicon", "default": [] },
+                { "out": "taboos", "path": "data.voice.taboos", "default": [] }
+              ]
+            },
+            { "out": "canon_facts", "path": "data.canon_facts", "default": [] }
+          ]
+        }
+      }
+    }
+  }
+}
