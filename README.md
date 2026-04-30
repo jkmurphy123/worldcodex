@@ -11,6 +11,7 @@ world add titan-osa place "Argonaut Station"
 world validate titan-osa
 world build titan-osa
 world get titan-osa --type place --pretty
+world query relationships titan-osa place.argonaut_station
 
 ## Schemas
 Known atom types use schema-shaped `data` templates and validation. See

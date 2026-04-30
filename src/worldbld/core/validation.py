@@ -78,6 +78,7 @@ def validate_world(wp: WorldPaths) -> ValidationReport:
         _validate_type_schema(report, record)
 
     for record in records:
+        _validate_relationships(report, record)
         _validate_references(report, wp, record, known_ids=set(id_to_path))
 
     return report
@@ -224,6 +225,42 @@ def _validate_references(
             report.add(record.path, f"Broken reference '{ref}'")
 
 
+def _validate_relationships(report: ValidationReport, record: _Record) -> None:
+    data = record.obj.get("data")
+    if not isinstance(data, dict):
+        return
+    relationships = data.get("relationships")
+    if relationships is None:
+        return
+    if not isinstance(relationships, list):
+        report.add(record.path, "Field 'data.relationships' must be a list")
+        return
+
+    atom_id = record.obj.get("id", "<unknown>")
+    for index, rel in enumerate(relationships, start=1):
+        label = f"data.relationships[{index}]"
+        if not isinstance(rel, dict):
+            report.add(record.path, f"{label} must be an object")
+            continue
+        predicate = rel.get("predicate")
+        obj = rel.get("object")
+        subject = rel.get("subject")
+        canon_tier = rel.get("canon_tier")
+        if not _is_nonempty_string(predicate):
+            report.add(record.path, f"{label}.predicate must be a non-empty string")
+        if not _is_nonempty_string(obj):
+            report.add(record.path, f"{label}.object must be a non-empty string")
+        if subject is not None and not _is_nonempty_string(subject):
+            report.add(record.path, f"{label}.subject must be a non-empty string when present")
+        if canon_tier is not None and canon_tier not in CANON_TIERS:
+            report.add(
+                record.path,
+                f"{label}.canon_tier must be one of: {', '.join(sorted(CANON_TIERS))}",
+            )
+        if subject == atom_id and obj == atom_id:
+            report.add(record.path, f"{label} cannot relate an atom to itself")
+
+
 def _iter_references(obj: dict[str, Any]) -> Iterable[str]:
     refs = obj.get("refs")
     if isinstance(refs, dict):
@@ -231,6 +268,9 @@ def _iter_references(obj: dict[str, Any]) -> Iterable[str]:
 
     data = obj.get("data")
     if isinstance(data, dict):
+        for key in ("participants", "locations", "parties"):
+            yield from _string_values(data.get(key))
+
         relationships = data.get("relationships")
         if isinstance(relationships, list):
             for rel in relationships:

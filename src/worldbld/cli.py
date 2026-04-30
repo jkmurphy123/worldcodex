@@ -5,6 +5,7 @@ from worldbld.commands.add_cmd import add
 from worldbld.commands.get_cmd import get
 from worldbld.commands.build_cmd import build
 from worldbld.commands.validate_cmd import validate
+from worldbld.commands.query_cmd import app as query_app
 from worldbld.commands.view_cmd import view_app
 
 app = typer.Typer(
@@ -18,6 +19,7 @@ app.command("add")(add)
 app.command("get")(get)
 app.command("build")(build)
 app.command("validate")(validate)
+app.add_typer(query_app, name="query")
 app.add_typer(view_app, name="view")
 
 if __name__ == "__main__":

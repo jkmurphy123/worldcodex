@@ -191,6 +191,56 @@ Fields named `canon_tier` must use one of:
 - `rumored`
 - `deprecated`
 
+## Relationships
+
+Atoms can define first-class relationships in `data.relationships`:
+
+```json
+{
+  "predicate": "governed_by",
+  "object": "org.outer_system_authority",
+  "summary": "Optional human-readable note.",
+  "canon_tier": "established",
+  "source": "place.argonaut_station",
+  "start_date": "2191-03-14",
+  "end_date": null,
+  "status": "active"
+}
+```
+
+Required relationship fields:
+
+- `predicate`: non-empty string
+- `object`: referenced atom ID
+
+Optional fields:
+
+- `subject`: referenced atom ID; defaults to the containing atom ID
+- `summary`
+- `canon_tier`
+- `source`
+- `start_date`
+- `end_date`
+- `status`
+
+`world build` emits normalized relationship records in `builds/index.json`:
+
+- `relationships`: flat relationship list
+- `relationship_map`: relationships keyed by subject and object IDs
+
+## Timeline
+
+`event` atoms form the timeline. Required event fields are:
+
+- `data.date_or_era`
+- `data.participants`
+- `data.locations`
+- `data.causes`
+- `data.consequences`
+- `data.canon_tier`
+
+`world build` emits ordered event summaries in `builds/index.json` under `timeline`.
+
 ## Validation
 
 Run:
@@ -207,6 +257,20 @@ Validation checks:
 - duplicate IDs
 - ID/type/path conventions
 - broken references in `refs` and `data.relationships`
+- broken references in event participants/locations and conflict parties
+- malformed relationships
+
+## Graph Queries
+
+Milestone 3 adds graph and timeline query commands:
+
+```bash
+world query relationships titan-osa place.argonaut_station
+world query factions-in titan-osa place.argonaut_station
+world query characters-for titan-osa org.outer_system_authority
+world query unresolved-conflicts titan-osa
+world query events-for titan-osa place.argonaut_station
+```
 
 ## Adding Atoms
 

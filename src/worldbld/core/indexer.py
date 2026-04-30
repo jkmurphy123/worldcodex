@@ -1,6 +1,7 @@
 from __future__ import annotations
 from pathlib import Path
 from typing import Any, Dict, List
+from worldbld.core.graph import relationship_records, timeline_record
 from worldbld.core.io import read_json, write_json
 from worldbld.core.paths import WorldPaths
 
@@ -15,6 +16,9 @@ def build_index(wp: WorldPaths) -> Dict[str, Any]:
     type_map: Dict[str, List[str]] = {}
     tag_map: Dict[str, List[str]] = {}
     id_to_path: Dict[str, str] = {}
+    relationships: List[Dict[str, Any]] = []
+    relationship_map: Dict[str, List[Dict[str, Any]]] = {}
+    timeline: List[Dict[str, Any]] = []
 
     for f in files:
         try:
@@ -35,6 +39,8 @@ def build_index(wp: WorldPaths) -> Dict[str, Any]:
             "name": obj.get("name", ""),
             "summary": obj.get("summary", ""),
             "tags": obj.get("tags", []) or [],
+            "canon_tier": (obj.get("data") or {}).get("canon_tier", "established") if isinstance(obj.get("data"), dict) else "established",
+            "status": (obj.get("data") or {}).get("status", "active") if isinstance(obj.get("data"), dict) else "active",
             "path": str(f.relative_to(wp.root)),
         }
         atoms.append(rec)
@@ -44,12 +50,27 @@ def build_index(wp: WorldPaths) -> Dict[str, Any]:
         for t in rec["tags"]:
             tag_map.setdefault(t, []).append(atom_id)
 
+        atom_relationships = relationship_records(obj)
+        relationships.extend(atom_relationships)
+        for rel in atom_relationships:
+            relationship_map.setdefault(rel["subject"], []).append(rel)
+            relationship_map.setdefault(rel["object"], []).append(rel)
+
+        event = timeline_record(obj)
+        if event is not None:
+            timeline.append(event)
+
+    timeline.sort(key=lambda item: str(item.get("date_or_era", "")))
+
     index = {
-        "version": 1,
+        "version": 2,
         "atoms": atoms,
         "type_map": type_map,
         "tag_map": tag_map,
         "id_to_path": id_to_path,
+        "relationships": relationships,
+        "relationship_map": relationship_map,
+        "timeline": timeline,
     }
     return index
 
