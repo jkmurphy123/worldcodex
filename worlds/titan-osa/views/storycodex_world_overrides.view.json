@@ -1,0 +1,20 @@
+{
+  "id": "view.storycodex_world_overrides",
+  "query": {
+    "include": [
+      {"type": "place"},
+      {"type": "org"}
+    ]
+  },
+  "assemble": {
+    "format": "object",
+    "object": {
+      "world_name": {"from_atom": "place.argonaut_station", "path": "name"},
+      "setting_summary": {"from_atom": "place.argonaut_station", "path": "summary"},
+      "key_factions": {
+        "from_query": {"type": "org"},
+        "map": {"pick": ["id", "name", "summary"]}
+      }
+    }
+  }
+}

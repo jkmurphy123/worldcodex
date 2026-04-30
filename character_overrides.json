@@ -1,0 +1,25 @@
+{
+  "characters": [
+    {
+      "id": "character.elara_myung",
+      "name": "Elara Myung",
+      "summary": "A senior Aegis technician whose steadiness is famous on Argonaut Station, and whose private fear is that the system is drifting in ways the dashboards refuse to name.",
+      "voice": null,
+      "canon_facts": []
+    },
+    {
+      "id": "character.sloane_kestrel",
+      "name": "Sloane Kestrel",
+      "summary": "The OSA Compliance Liaison assigned to Argonaut Station: polite, immaculate, and terrifyingly calm, as if the station is a spreadsheet that occasionally develops feelings.",
+      "voice": null,
+      "canon_facts": []
+    },
+    {
+      "id": "character.tamsin_velle",
+      "name": "Tamsin Velle",
+      "summary": "A hydroponics shift lead and unofficial station listener who trades in small comforts and small truths, collecting what people won’t write down because it sounds like fear.",
+      "voice": null,
+      "canon_facts": []
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "doc.materials_compat_note_17b",
+  "type": "doc",
+  "name": "Materials Compatibility Note 17-B",
+  "summary": "A buried technical memo warning that a specific class of substitute polymers becomes brittle under Titan-relevant trace contaminants, triggering slow seal failures across Aegis subsystems.",
+  "tags": ["memo", "materials", "compatibility", "17-b", "aegis", "life-support", "buried-warning", "argonaut"],
+  "refs": {
+    "canonical": true,
+    "related": ["tech.aegis_lifesupport_stack", "place.argonaut_station", "org.outer_system_authority"]
+  },
+  "data": {
+    "doc_type": "internal memo",
+    "classification": "archived / low visibility",
+    "author": {
+      "name": "E. Kwon",
+      "role": "Materials Engineering (Aegis Supplier QA)"
+    },
+    "date": "2189-08-22",
+    "status": {
+      "official": "resolved (supplier substitution rejected)",
+      "practical": "unknown (substitution may have resurfaced via procurement waivers)"
+    },
+    "problem_statement": "Certain elastomer and polymer seal compounds, acceptable in inner-system habitats, exhibit long-tail brittleness and microcracking when exposed to Titan-relevant trace contaminants and thermal cycling regimes.",
+    "risk_profile": {
+      "shape": "slow-burn accumulation",
+      "failure_signature": [
+        "microleaks within acceptable margins",
+        "increased maintenance frequency without clear root cause",
+        "cross-bay correlation that looks like 'bad luck' until it isn't"
+      ],
+      "affected_areas": [
+        "scrubber matrices",
+        "water reclamation seals",
+        "hydroponics circulation couplers",
+        "thermal lattice junction gaskets"
+      ]
+    },
+    "why_it_got_buried": [
+      "The approved parts list was updated, and the issue was marked 'resolved.'",
+      "Later procurement waivers allowed 'equivalent' substitutes during shortages.",
+      "Search terms and tagging were inconsistent; the memo is easy to miss unless you know the exact note number."
+    ],
+    "story_uses": [
+      "A technician finds the memo while looking for an unrelated part spec.",
+      "A committee insists the risk is already handled, but cannot produce the current substitution list.",
+      "A pattern of tiny failures suddenly connects into a single narrative: Compatibility Cascade."
+    ],
+    "prompt_hooks": [
+      "Someone references '17-B' like a superstition, but no one can locate it.",
+      "A redacted attachment list implies the memo once had stronger language.",
+      "A shipment arrives labeled compliant, but the material code matches the memo’s warning."
+    ],
+    "tone": {
+      "keywords": ["quiet dread", "paper trail menace", "technical prophecy"],
+      "avoid": ["magical curse framing", "instant catastrophic payoff without buildup"]
+    }
+  }
+}

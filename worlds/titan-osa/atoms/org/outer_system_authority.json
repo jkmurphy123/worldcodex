@@ -1,0 +1,62 @@
+{
+  "id": "org.outer_system_authority",
+  "type": "org",
+  "name": "Outer System Authority (OSA)",
+  "summary": "A distant governance-and-logistics machine that treats colonies as managed systems: quotas, compliance, and calm. Authority is distributed through committees, dashboards, and the quiet power of supply.",
+  "tags": ["osa", "authority", "bureaucracy", "outer-system", "argonaut", "titan"],
+  "refs": {
+    "canonical": true,
+    "related": ["place.argonaut_station"]
+  },
+  "data": {
+    "mandate": "Coordinate and govern Outer System settlements through standardized policy, safety frameworks, and resource allocation.",
+    "how_it_rules": {
+      "mechanisms": [
+        "Layered oversight committees with narrow, enforceable scopes.",
+        "Operational dashboards that define what counts as real.",
+        "Supply chain leverage: parts, spares, and approvals move on OSA timelines.",
+        "Procedural updates that become de facto law without requiring spectacle."
+      ],
+      "style": [
+        "Rules are rarely enforced harshly; they are refined, updated, and quietly made unavoidable.",
+        "Incidents are categorized to preserve institutional calm.",
+        "Communication favors certainty, even when reality is probabilistic."
+      ]
+    },
+    "presence_on_argonaut": {
+      "local_face": [
+        "Station Administrator (civil governance)",
+        "Compliance Liaison (policy interface)",
+        "Procurement Authority (parts and substitutions)"
+      ],
+      "remote_face": [
+        "Safety Review Board",
+        "Throughput Optimization Committee",
+        "Public Confidence Office"
+      ],
+      "dynamic": "Authority feels everywhere and nowhere at once: local staff manage daily life, but major decisions route through distant committees."
+    },
+    "values_and_blind_spots": {
+      "values": [
+        "Stability",
+        "Standardization",
+        "Predictability",
+        "Measurable compliance"
+      ],
+      "blind_spots": [
+        "Unmeasured stress and morale as leading indicators",
+        "Local expertise that contradicts central models",
+        "Compound risk from individually justified exceptions"
+      ]
+    },
+    "prompt_hooks": [
+      "A committee directive narrows operating margins while insisting risk is reduced.",
+      "A parts substitution is approved 'temporarily' and becomes permanent by inertia.",
+      "A local admin tries to do the right thing and discovers the paperwork is designed to prevent exactly that."
+    ],
+    "tone": {
+      "keywords": ["bureaucratic gravity", "administrative horror", "calm as control"],
+      "avoid": ["mustache-twirling villainy", "single-evil-person simplification"]
+    }
+  }
+}

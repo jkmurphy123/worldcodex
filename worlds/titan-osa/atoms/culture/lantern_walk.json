@@ -1,0 +1,64 @@
+{
+  "id": "culture.lantern_walk",
+  "type": "culture",
+  "name": "The Lantern Walk",
+  "summary": "A station-wide festival that looks like a gentle procession but functions as a ceremonial audit: lights in the corridors, checklists in the hands, and a shared agreement not to call it fear.",
+  "tags": ["argonaut", "titan", "ritual", "maintenance", "festival", "audit", "procedural-dread"],
+  "refs": {
+    "canonical": true,
+    "related": ["place.argonaut_station", "tech.aegis_lifesupport_stack"]
+  },
+  "data": {
+    "origin": {
+      "story": "The Lantern Walk began as an informal tradition among Aegis technicians who carried inspection lights during extended maintenance cycles. Families joined to ‘support the crews,’ then administrators rebranded it as a morale event. It remains, at heart, a safety practice disguised as celebration.",
+      "first_observed": "2196-11-02",
+      "why_it_stuck": "It lets the station collectively acknowledge fragility without admitting vulnerability."
+    },
+    "ritual": {
+      "steps": [
+        "Households receive corridor lanterns issued by station services: identical casings, different personal markings.",
+        "Participants follow a mapped route through key service corridors, pausing at designated junctions.",
+        "At each junction, a call-and-response is read: a safety aphorism paired with a maintenance statistic.",
+        "Technicians perform visible ‘blessings’ of systems: tightening a panel, swapping a filter, reseating a connector.",
+        "The walk ends at an observation gallery overlooking a sealed hydroponics vault, where the lights are dimmed and the air readouts are displayed in silence."
+      ],
+      "symbols": [
+        "Lanterns represent controlled light in an environment that punishes exposure.",
+        "The route represents the ‘body’ of the station: lungs, blood, skin, and nerves.",
+        "Silence at the end represents trust, denial, or both."
+      ]
+    },
+    "social_function": {
+      "public_face": "Morale, unity, remembrance of the founding crews.",
+      "private_face": "A consent ritual for continued dependence on the system.",
+      "shadow_function": "A compliance audit: observers note which corridors lag in participation, which households avoid the route, which technicians deviate from the checklist."
+    },
+    "tension_points": [
+      "Some residents treat it as sacred; others resent it as surveillance with candles.",
+      "Technicians feel pride and pressure: their work is on display, their mistakes become folklore.",
+      "Children enjoy the lights, then internalize the lesson that safety is a social duty."
+    ],
+    "variants": [
+      {
+        "name": "Cold Lantern Year",
+        "trigger": "After a near-miss or quiet ration tightening.",
+        "difference": "The route includes additional service corridors; the call-and-response becomes more formal; administrators attend conspicuously."
+      },
+      {
+        "name": "Open Lantern Year",
+        "trigger": "After a period of stability or a publicized success.",
+        "difference": "More music, more personal lantern designs, less overt checklist presence (but not less observation)."
+      }
+    ],
+    "prompt_hooks": [
+      "A missing household lantern becomes a social alarm bell.",
+      "A technician whispers that the call-and-response numbers are wrong.",
+      "A child notices the ‘silent’ ending is longer this year.",
+      "A new administrator tries to sanitize the ritual and accidentally reveals what it’s actually for."
+    ],
+    "tone": {
+      "keywords": ["tender dread", "institutional ritual", "light against containment"],
+      "avoid": ["cartoon cult vibes", "overt villain monologues during the festival"]
+    }
+  }
+}
