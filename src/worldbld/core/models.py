@@ -2,6 +2,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional
 
+from worldbld.core.atom_schemas import atom_data_template
+
 @dataclass
 class AtomEnvelope:
     id: str
@@ -19,5 +21,5 @@ def atom_stub(atom_id: str, atom_type: str, name: str) -> Dict[str, Any]:
         "summary": "",
         "tags": [],
         "refs": {},
-        "data": {},
+        "data": atom_data_template(atom_type),
     }

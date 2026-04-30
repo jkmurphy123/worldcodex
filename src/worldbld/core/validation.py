@@ -4,6 +4,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Iterable
 
+from worldbld.core.atom_schemas import CANON_TIERS, expected_type_name, get_path, schema_for
 from worldbld.core.io import read_json
 from worldbld.core.indexer import scan_atoms
 from worldbld.core.paths import WorldPaths
@@ -71,6 +72,10 @@ def validate_world(wp: WorldPaths) -> ValidationReport:
     for record in atom_records:
         _validate_atom_envelope(report, wp, record)
         _validate_atom_path_convention(report, wp, record)
+        _validate_type_schema(report, record)
+
+    for record in doc_records:
+        _validate_type_schema(report, record)
 
     for record in records:
         _validate_references(report, wp, record, known_ids=set(id_to_path))
@@ -158,6 +163,51 @@ def _validate_atom_path_convention(report: ValidationReport, wp: WorldPaths, rec
         return
     if len(rel.parts) >= 2 and rel.parts[0] != atom_type:
         report.add(record.path, f"Atom type '{atom_type}' does not match atoms/{rel.parts[0]} folder")
+
+
+def _validate_type_schema(report: ValidationReport, record: _Record) -> None:
+    atom_type = record.obj.get("type")
+    if not isinstance(atom_type, str):
+        return
+
+    schema = schema_for(atom_type)
+    if schema is None:
+        return
+
+    for path, expected_type in schema.get("required", {}).items():
+        exists, value = get_path(record.obj, path)
+        if not exists:
+            report.add(record.path, f"Type '{atom_type}' missing required field '{path}'")
+            continue
+        _validate_schema_value(report, record, atom_type, path, value, expected_type)
+
+    for path, expected_type in schema.get("optional", {}).items():
+        exists, value = get_path(record.obj, path)
+        if exists:
+            _validate_schema_value(report, record, atom_type, path, value, expected_type)
+
+
+def _validate_schema_value(
+    report: ValidationReport,
+    record: _Record,
+    atom_type: str,
+    path: str,
+    value: Any,
+    expected_type: type,
+) -> None:
+    if not isinstance(value, expected_type):
+        report.add(
+            record.path,
+            f"Type '{atom_type}' field '{path}' must be a {expected_type_name(expected_type)}",
+        )
+        return
+    if expected_type is str and not value.strip():
+        report.add(record.path, f"Type '{atom_type}' field '{path}' must not be empty")
+    if path.endswith("canon_tier") and isinstance(value, str) and value not in CANON_TIERS:
+        report.add(
+            record.path,
+            f"Type '{atom_type}' field '{path}' must be one of: {', '.join(sorted(CANON_TIERS))}",
+        )
 
 
 def _validate_references(
