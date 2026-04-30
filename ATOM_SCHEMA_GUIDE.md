@@ -305,6 +305,79 @@ Supported filters:
 
 Use `--out PATH` to write the export JSON to disk.
 
+## Patch Workflow
+
+Milestone 5 adds patch files for controlled canon updates from external tools.
+
+Commands:
+
+```bash
+world patch validate titan-osa /tmp/world_patch.json
+world patch preview titan-osa /tmp/world_patch.json
+world patch apply titan-osa /tmp/world_patch.json
+```
+
+Patch format:
+
+```json
+{
+  "schema_version": "worldcodex.patch.v1",
+  "id": "example-news-patch",
+  "description": "Canon changes proposed by a downstream generator.",
+  "operations": [
+    {
+      "op": "add_timeline_event",
+      "atom": {
+        "id": "event.example",
+        "type": "event",
+        "name": "Example Event",
+        "summary": "A short event summary.",
+        "tags": [],
+        "refs": {},
+        "data": {
+          "date_or_era": "2200-01-01",
+          "participants": ["character.example"],
+          "locations": ["place.example"],
+          "causes": ["A cause."],
+          "consequences": ["A consequence."],
+          "canon_tier": "established",
+          "relationships": [],
+          "sources": []
+        }
+      }
+    },
+    {
+      "op": "add_relationship",
+      "subject": "character.example",
+      "predicate": "witnessed",
+      "object": "event.example",
+      "summary": "Character witnessed the event."
+    }
+  ]
+}
+```
+
+Supported operations:
+
+- `add_atom`
+- `update_atom`
+- `deprecate_atom`
+- `add_relationship`
+- `update_relationship`
+- `add_timeline_event`
+- `resolve_conflict`
+
+Patch validation checks:
+
+- patch schema version
+- supported operation names
+- existing or newly added referenced atom IDs
+- relationship subject/object references
+- event participant/location references
+- canon tier values
+
+`world patch apply` validates first, applies operations, runs full `world validate`, rebuilds the index during operation processing, and archives the applied patch under `patches/applied/`.
+
 ## Adding Atoms
 
 `world add` now creates schema-shaped templates for known atom types:

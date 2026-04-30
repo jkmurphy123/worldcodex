@@ -13,6 +13,7 @@ world build titan-osa
 world get titan-osa --type place --pretty
 world query relationships titan-osa place.argonaut_station
 world export titan-osa news-context --out /tmp/news_context.json
+world patch preview titan-osa /tmp/world_patch.json
 
 ## Schemas
 Known atom types use schema-shaped `data` templates and validation. See
@@ -31,3 +32,14 @@ world export titan-osa location-context --location place.argonaut_station
 ```
 
 Use `--out PATH` to write the JSON to a file.
+
+## Patches
+Downstream tools can propose canon changes with versioned patch files:
+
+```bash
+world patch validate titan-osa /tmp/world_patch.json
+world patch preview titan-osa /tmp/world_patch.json
+world patch apply titan-osa /tmp/world_patch.json
+```
+
+Applied patches are archived under `patches/applied/` inside the world folder.

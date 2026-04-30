@@ -31,6 +31,10 @@ class WorldPaths:
         return self.builds_dir / "exports"
 
     @property
+    def patches_dir(self) -> Path:
+        return self.root / "patches"
+
+    @property
     def index_json(self) -> Path:
         return self.builds_dir / "index.json"
 
