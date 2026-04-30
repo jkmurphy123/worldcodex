@@ -12,7 +12,22 @@ world validate titan-osa
 world build titan-osa
 world get titan-osa --type place --pretty
 world query relationships titan-osa place.argonaut_station
+world export titan-osa news-context --out /tmp/news_context.json
 
 ## Schemas
 Known atom types use schema-shaped `data` templates and validation. See
 `ATOM_SCHEMA_GUIDE.md` for the current typed atom contracts.
+
+## Context Exports
+WorldCodex provides stable context exports for downstream tools:
+
+```bash
+world export titan-osa world-bible
+world export titan-osa story-context --character character.elara_myung
+world export titan-osa news-context
+world export titan-osa image-context --location place.argonaut_station
+world export titan-osa character-context --character character.elara_myung
+world export titan-osa location-context --location place.argonaut_station
+```
+
+Use `--out PATH` to write the JSON to a file.

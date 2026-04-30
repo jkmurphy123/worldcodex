@@ -272,6 +272,39 @@ world query unresolved-conflicts titan-osa
 world query events-for titan-osa place.argonaut_station
 ```
 
+## Context Exports
+
+Milestone 4 adds built-in context exports for downstream apps:
+
+```bash
+world export titan-osa world-bible
+world export titan-osa story-context --character character.elara_myung
+world export titan-osa news-context
+world export titan-osa image-context --location place.argonaut_station
+world export titan-osa character-context --character character.elara_myung
+world export titan-osa location-context --location place.argonaut_station
+```
+
+Export metadata includes:
+
+- `schema_version`
+- `export_type`
+- `world_id`
+- `world_title`
+- `generated_at`
+- `source_atom_ids`
+- `filters`
+
+Supported filters:
+
+- `--location`
+- `--character`
+- `--faction`
+- `--tag`
+- `--canon-tier`
+
+Use `--out PATH` to write the export JSON to disk.
+
 ## Adding Atoms
 
 `world add` now creates schema-shaped templates for known atom types:
